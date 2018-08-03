@@ -1,0 +1,62 @@
+.map-container {
+	height: 10rem;
+}
+#features {
+	background: url(/images/features.jpg) no-repeat bottom left;
+	background-size: cover; 
+}
+@media (min-width: 576px) {
+	.heading {
+		font-size: 5rem;
+		font-weight: bold;
+	}
+}
+.heading {
+	font-size: 4rem;
+	font-weight: bold;
+}
+.orange {
+	color: #f05f40;
+}
+.close-btn {
+	position: absolute;
+	top: 0.25rem;
+	right: 0.4rem;
+}
+/* For Creating Responsive Bootstrap Card Grid */
+@media (min-width: 576px) {
+	.card-deck .card {
+		flex: 0 0 calc(50% - 30px);
+	}
+}
+@media (min-width: 768px) {
+	.card-deck .card {
+		flex: 0 0 calc(33.3333333333% - 30px);
+	}
+}
+@media (min-width: 992px) {
+	.card-deck .card {
+		flex: 0 0 calc(25% - 30px);
+	}
+}
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
+}
+#overlay i {
+	position: absolute;
+	top: 40%;
+	left: 45%;
+}
+#overlay p {
+	position: absolute;
+	top: 60%;
+	left: 44%;	
+}

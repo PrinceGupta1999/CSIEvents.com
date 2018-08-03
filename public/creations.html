@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Creations | CSIEvents</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/datetimepicker.css" />
+    <link rel="icon" href="images/logo.ico">
+</head>
+<body class="pt-5">
+    <nav class="navbar bg-light navbar-light navbar-expand-md fixed-top" id="myNavbar">
+        <a class="navbar-text navbar-brand" href="#my-creations">CSIEvents</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav_collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="discover.html" class="nav-link">Discover</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#my-creations" class="nav-link active">My Creations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="subscriptions.html" class="nav-link">My Subscriptions</a>
+                </li>
+                <li class="nav-item pl-md-2">
+                    <button class="btn btn-default bg-light border" id="login-btn">Login/Sign Up</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="container-fluid justify-content-center mb-2 pt-3" id="my-creations">
+        <h1 class="font-weight-bold text-center">My Creations</h1>
+        <div class="row mb-4" id="event-container"> 
+            <h4 class="border-bottom border-top col-12 text-center">Events Happenening Now</h4>  
+            <div class="card-deck mb-3 pt-3 col-12" id="present">
+                <i class="fas fa-spinner fa-spin fa-4x d-block m-auto text-muted"></i>
+                <p class="lead text-muted mt-2 mb-2 col-12 text-center">Loading...</p>
+            </div>  
+            <h4 class="border-bottom border-top col-12 text-center">Events Scheduled to Happen</h4>
+            <div class="card-deck mb-3 pt-3 col-12" id="future">
+                <i class="fas fa-spinner fa-spin fa-4x d-block m-auto text-muted"></i>
+                <p class="lead text-muted mt-2 mb-2 col-12 text-center">Loading...</p>
+            </div>
+            <h4 class="border-bottom border-top col-12 text-center">Events Already Happened</h4>
+            <div class="card-deck mb-3 pt-3 col-12" id="past">
+                <i class="fas fa-spinner fa-spin fa-4x d-block m-auto text-muted"></i>
+                <p class="lead text-muted mt-2 mb-2 col-12 text-center">Loading...</p>
+            </div>
+        </div>  
+        <p class="lead text-muted text-center mb-2">Want to Create An Event Now?</p>
+        <button data-toggle="modal" data-target="#create-event" class="btn btn-primary btn-block col-8 col-sm-6 col-md-3 col-lg-2 m-auto">Create Event</button>
+    </section>
+    <div class="modal fade" id="create-event">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Event</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="create-event-form" novalidate class="needs-validation">
+                        <div class="form-group">
+                            <label for="name" class="col-form-label sr-only">Event Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Event Name" required />
+                            <div class="invalid-feedback">
+                                Please provide an Event Name.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-form-label sr-only">Description</label>
+                            <textarea class="form-control" id="description" rows="5" placeholder="Your Event Description Goes Here .." required></textarea>
+                            <div class="invalid-feedback">
+                                Please fill out the Event Description.
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
+                                <label for="time-start" class="col-form-label sr-only">Time Start</label>
+                                <input type="text" id="time-start" class="form-control start" placeholder="Starting Date & Time" required/>
+                                <div class="invalid-feedback">
+                                    Please provide a Starting Date and Time.
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="time-end" class="col-form-label sr-only">Time End</label>
+                                <input type="text" id="time-end" class="form-control end" placeholder="Ending Date & Time" required/>
+                                <div class="invalid-feedback">
+                                    Please provide a Ending Date and Time.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location" class="col-form-label sr-only">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Venue" required/>
+                            <div class="invalid-feedback">
+                                Please mention a venue for the event.
+                            </div>
+                            <input type="hidden" id="lat" />
+                            <input type="hidden" id="lng" />
+                        </div>
+                        <div class="map-container w-100 mb-2" id="create-event-map"></div>
+                        <input type="submit" id="create-event-btn" class="btn btn-primary float-right mt-2" value="Create Event" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="update-event">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Event</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="update-event-form" novalidate class="needs-validation">
+                        <div class="form-group">
+                            <label for="id" class="col-form-label">Event Id</label>
+                            <input type="text" class="form-control-plaintext" id="event-id" readonly placeholder="Event Id" required />
+                            <div class="invalid-feedback">
+                                Event Id has been deleted. Please exit.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-form-label">Event Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Event Name" required />
+                            <div class="invalid-feedback">
+                                Please provide an Event Name.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="5" placeholder="Your Event Description Goes Here .." required></textarea>
+                            <div class="invalid-feedback">
+                                Please fill out the Event Description.
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
+                                <label for="time-start" class="col-form-label">Time Start</label>
+                                <input type="text" id="time-start" class="form-control start" placeholder="Starting Date & Time" required/>
+                                <div class="invalid-feedback">
+                                    Please provide a Starting Date and Time.
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="time-end" class="col-form-label">Time End</label>
+                                <input type="text" id="time-end" class="form-control end" placeholder="Ending Date & Time" required/>
+                                <div class="invalid-feedback">
+                                    Please provide a Ending Date and Time.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location" class="col-form-label">Location</label>
+                            <input type="text" class="form-control loc-autocomplete" id="location" placeholder="Venue" required/>
+                            <div class="invalid-feedback">
+                                Please mention a venue for the event.
+                            </div>
+                            <input type="hidden" id="lat" />
+                            <input type="hidden" id="lng" />
+                        </div>
+                        <div class="map-container w-100 mb-2" id="update-event-map"></div>
+                        <input type="submit" id="create-event-btn" class="btn btn-warning float-right mt-2" value="Update Event" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="show-event">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="card">
+                        <div class="card-header font-weight-bold h3" id="name"></div>
+                        <div class="card-body">
+                            <p class="card-text" id="description"></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" id="from"><strong>From: </strong></li>
+                            <li class="list-group-item" id="to"><strong>To: </strong></li>
+                            <li class="list-group-item" id="venue"><strong>Venue: </strong></li>
+                            <li class="list-group-item p-0"><div class="map-container" id="map-modal"></div></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer pl-0 pr-0 pt-1 pb-1">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn subscribe-btn mr-1" onclick="subscribeEvent(this.id)"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="delete-event">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="lead">Are you Sure you want to delete the Event: <strong></strong>. This Change Can't be Reversed. Continue?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger delete-btn" onclick="deleteEvent(this.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alert-box" class="col-12 justify-content-center p-0" style="position: fixed; bottom: 0;"></div>
+    <footer class="container-fluid text-center bg-dark text-white">
+        <p class="lead m-0 p-3"><strong>All Rights reserved with Prince Gupta, NSIT</strong></p>   
+    </footer>  
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+    <script src="js/datetimepicker.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpgMd-lqRinW8lp8uAA0bicwdV4hauYm0"></script>
+    <script src="js/creations.js"></script>
+</body>
+</html>

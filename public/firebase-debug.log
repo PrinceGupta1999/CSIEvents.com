@@ -1,0 +1,91 @@
+[debug] [2018-07-22T15:57:04.987Z] ----------------------------------------------------------------------
+[debug] [2018-07-22T15:57:04.990Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gupta\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-07-22T15:57:04.990Z] CLI Version:   3.19.3
+[debug] [2018-07-22T15:57:04.990Z] Platform:      win32
+[debug] [2018-07-22T15:57:04.990Z] Node Version:  v9.3.0
+[debug] [2018-07-22T15:57:04.991Z] Time:          Sun Jul 22 2018 21:27:04 GMT+0530 (India Standard Time)
+[debug] [2018-07-22T15:57:04.991Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-22T15:57:05.001Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-22T15:57:05.001Z] > authorizing via signed-in user
+[debug] [2018-07-22T15:57:05.003Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/csiproject-ab88a  
+  
+ Sun Jul 22 2018 21:27:05 GMT+0530 (India Standard Time)
+[debug] [2018-07-22T15:57:06.478Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-22T15:57:06.479Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/csiproject-ab88a/tokens  
+  
+ Sun Jul 22 2018 21:27:06 GMT+0530 (India Standard Time)
+[debug] [2018-07-22T15:57:08.070Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-22T15:57:08.071Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/csiproject-ab88a  
+  
+ Sun Jul 22 2018 21:27:08 GMT+0530 (India Standard Time)
+[debug] [2018-07-22T15:57:10.302Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Prince\Html Files\CSISelection'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-07-22T15:57:17.119Z] Fetching environment
+[debug] [2018-07-22T15:57:17.121Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/758738642724:getServerAppConfig  
+  
+ Sun Jul 22 2018 21:27:17 GMT+0530 (India Standard Time)
+[debug] [2018-07-22T15:57:17.121Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/758738642724/clients/_:getWebAppConfig  
+  
+ Sun Jul 22 2018 21:27:17 GMT+0530 (India Standard Time)
+[debug] [2018-07-22T15:57:18.299Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-22T15:57:18.299Z] Starting @google-cloud/functions-emulator
+[debug] [2018-07-22T15:57:18.384Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-07-22T15:57:22.048Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
+[debug] [2018-07-26T16:45:08.613Z] ----------------------------------------------------------------------
+[debug] [2018-07-26T16:45:08.615Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gupta\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-07-26T16:45:08.615Z] CLI Version:   4.0.0
+[debug] [2018-07-26T16:45:08.615Z] Platform:      win32
+[debug] [2018-07-26T16:45:08.615Z] Node Version:  v9.3.0
+[debug] [2018-07-26T16:45:08.616Z] Time:          Thu Jul 26 2018 22:15:08 GMT+0530 (India Standard Time)
+[debug] [2018-07-26T16:45:08.616Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-26T16:45:08.632Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-26T16:45:08.633Z] > authorizing via signed-in user
+[debug] [2018-07-26T16:45:08.634Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-26T16:45:08.634Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/Sfz3GW-VXA_vwQk0Nk1yJtDTHhesDB_vm_uyjNWeoNo',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Jul 26 2018 22:15:08 GMT+0530 (India Standard Time)
+[debug] [2018-07-26T16:45:09.242Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-26T16:45:09.349Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/csiproject-ab88a  
+  
+ Thu Jul 26 2018 22:15:09 GMT+0530 (India Standard Time)
+[debug] [2018-07-26T16:45:10.715Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-26T16:45:10.717Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/csiproject-ab88a/tokens  
+  
+ Thu Jul 26 2018 22:15:10 GMT+0530 (India Standard Time)
+[debug] [2018-07-26T16:45:11.779Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-26T16:45:11.781Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/csiproject-ab88a  
+  
+ Thu Jul 26 2018 22:15:11 GMT+0530 (India Standard Time)
+[debug] [2018-07-26T16:45:13.775Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Prince\Html Files\CSISelection'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-07-26T16:45:33.441Z] Fetching environment
+[debug] [2018-07-26T16:45:33.447Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/758738642724:getServerAppConfig  
+  
+ Thu Jul 26 2018 22:15:33 GMT+0530 (India Standard Time)
+[debug] [2018-07-26T16:45:33.449Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/758738642724/clients/_:getWebAppConfig  
+  
+ Thu Jul 26 2018 22:15:33 GMT+0530 (India Standard Time)
+[debug] [2018-07-26T16:45:35.194Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-26T16:45:35.194Z] Starting @google-cloud/functions-emulator
+[debug] [2018-07-26T16:45:35.288Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-07-26T16:45:43.310Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
